@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -10,6 +9,7 @@ defineProps<{
 
 <template>
   <div class="greetings">
+    <h1>{{ t('hello') }}</h1>
     <h1 class="green">{{ msg }}</h1>
     <h3>
       You’ve successfully created a project with
