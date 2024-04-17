@@ -1,0 +1,47 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - pipeline/testing # Replace with the branch you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      # 1) Type check
+      - name: Type check
+        run: |
+          npm run type-check
+
+      # 2) Lint check
+      - name: Lint check
+        run: |
+          npm run lint
+
+      # 3) test check
+      - name: Run tests
+        run: |
+          npm run test:unit
+
+      # 3) coverage check
+      - name: Run coverage
+        run: |
+          npm run coverage
+
+      # Add your deployment steps here
+      - name: Deploy
+        run: |
+          npm run build
