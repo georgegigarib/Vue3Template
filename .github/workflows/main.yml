@@ -1,9 +1,10 @@
 name: CI/CD
+permissions:
+  contents: read
+  pull-requests: write
 
 on:
-  push:
-    branches:
-      - pipeline/testing # Replace with the branch you want to trigger the workflow on
+  pull_request:
 
 jobs:
   build:
@@ -34,12 +35,14 @@ jobs:
       # 3) test check
       - name: Run tests
         run: |
-          npm run test:unit
+          npm run test-report
 
-      # 3) coverage check
-      - name: Run coverage
-        run: |
-          npm run coverage
+      - name: Upload coverage to comment
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          json-summary-path: './coverage/coverage-summary.json'
+          json-final-path: './coverage/coverage-final.json'
 
       # Add your deployment steps here
       - name: Deploy

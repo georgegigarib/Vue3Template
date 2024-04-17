@@ -15,6 +15,13 @@ module.exports = {
   rules: {
     'no-console': [process.env.NODE_ENV === 'production' ? 'error' : 'warn'],
     'no-debugger': [process.env.NODE_ENV === 'production' ? 'error' : 'warn'],
+    indent: [
+      'warn',
+      2,
+      {
+        SwitchCase: 1
+      }
+    ],
     quotes: ['error', 'single'],
     'no-unused-vars': [
       'error',
@@ -22,6 +29,13 @@ module.exports = {
         varsIgnorePattern: '^_',
         argsIgnorePattern: '^_',
         destructuredArrayIgnorePattern: '^_'
+      }
+    ],
+    'vue/max-attributes-per-line': [
+      'warn',
+      {
+        singleline: { max: 4 },
+        multiline: { max: 1 }
       }
     ]
   }
