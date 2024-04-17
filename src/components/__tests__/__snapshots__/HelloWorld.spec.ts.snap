@@ -39,5 +39,12 @@ exports[`HelloWorld > has expected html structure 1`] = `
     </a>
     . What's next? 
   </h3>
+  <button
+    class="bg-white"
+    data-test="button-for-toast"
+    data-v-e17ea971=""
+  >
+    Show Toast
+  </button>
 </div>
 `;
