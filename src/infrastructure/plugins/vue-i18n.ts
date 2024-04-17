@@ -1,3 +1,4 @@
+import { datetimeFormats } from '@/infrastructure/local/datetimeFormats'
 import { en } from '@/infrastructure/local/en.local'
 import { es } from '@/infrastructure/local/es.local'
 
@@ -9,6 +10,7 @@ const vueI18n = createI18n({
   legacy: false,
   locale: userLanguage,
   fallbackLocale: 'en',
+  datetimeFormats,
   missing: (locale, key) => {
     console.warn(`Missing translation key: ${key}, in locale: ${locale}`)
     return ''
@@ -20,3 +22,5 @@ const vueI18n = createI18n({
 })
 
 export { vueI18n }
+
+// DOC:https://vue-i18n.intlify.dev/guide/essentials/started.html

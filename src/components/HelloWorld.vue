@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
-defineProps<{
-  msg: string
-}>()
-</script>
-
 <template>
   <div class="greetings">
     <h1>{{ t('hello') }}</h1>
@@ -16,8 +7,21 @@ defineProps<{
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
     </h3>
+    <button data-test="button-for-toast" @click="showToast()" class="bg-white">Show Toast</button>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import { toast } from 'vue3-toastify'
+
+const { t } = useI18n()
+defineProps<{ msg: string }>()
+
+const showToast = () => {
+  toast.success('Hello, Vite + Vue 3!')
+}
+</script>
 
 <style scoped>
 h1 {
