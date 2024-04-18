@@ -12,6 +12,7 @@ const vueI18n = createI18n({
   fallbackLocale: 'en',
   datetimeFormats,
   missing: (locale, key) => {
+    // eslint-disable-next-line no-console
     console.warn(`Missing translation key: ${key}, in locale: ${locale}`)
     return ''
   },

@@ -1,7 +1,7 @@
 import { mount, VueWrapper } from '@vue/test-utils'
 import { describe, expect, it, beforeEach, vitest } from 'vitest'
-import { plugins } from '../../infrastructure/plugins/allPlugins'
-import HelloWorld from '../HelloWorld.vue'
+import { plugins } from '@/infrastructure/plugins/allPlugins'
+import HelloWorld from '@/components/HelloWorld.vue'
 import { toast } from 'vue3-toastify'
 
 describe('HelloWorld', () => {
