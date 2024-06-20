@@ -19,6 +19,15 @@ exports[`HelloWorld > has expected html structure 1`] = `
   <h3
     data-v-e17ea971=""
   >
+    <div
+      class="bg-accent rounded-xl dark:bg-secondary"
+      data-v-e17ea971=""
+    >
+       hola amigo 
+      <br
+        data-v-e17ea971=""
+      />
+    </div>
      You’ve successfully created a project with 
     <a
       data-v-e17ea971=""
