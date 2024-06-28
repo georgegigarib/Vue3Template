@@ -5,12 +5,12 @@ export const datetimeFormats: Record<string, DefineDateTimeFormat> = {
     shorter: {
       year: 'numeric',
       month: 'short',
-      day: '2-digit',
+      day: '2-digit'
     },
     short: {
       year: 'numeric',
       month: 'long',
-      day: '2-digit',
+      day: '2-digit'
     },
     long: {
       year: 'numeric',
@@ -18,14 +18,14 @@ export const datetimeFormats: Record<string, DefineDateTimeFormat> = {
       day: '2-digit',
       weekday: 'long',
       hour: '2-digit',
-      minute: '2-digit',
+      minute: '2-digit'
     },
     longer: {
       year: 'numeric',
       month: 'long',
       day: '2-digit',
       hour: '2-digit',
-      minute: '2-digit',
-    },
-  },
+      minute: '2-digit'
+    }
+  }
 }
