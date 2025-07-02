@@ -17,7 +17,6 @@ const toggleDark = useToggle(isDark)
 
       <button @click="toggleDark()">Toggle Dark Mode</button>
 
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>

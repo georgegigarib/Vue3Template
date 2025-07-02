@@ -13,7 +13,8 @@
     "coverage": "vitest run --coverage",
     "test-report": "vitest --reporter default --reporter vitest-markdown-reporter run --coverage",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "before-upload": "npm run format && npm run type-check && npm run tests"
   },
   "dependencies": {
     "@vueuse/core": "^10.11.0",
